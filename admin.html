@@ -3,40 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>STREET LIFE · Админ</title>
+<title>BRO · Админ</title>
+<meta name="theme-color" content="#08050E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800;900&family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Rubik:wght@500;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg-primary:#080A07;
-    --bg-card:#0F120D;
-    --bg-card-hover:#181D14;
-    --accent-color:#B8FF2E;
-    --accent-hover:#A5E800;
-    --accent-neon:#D4FF6A;
-    --text-primary:#F0F0F0;
-    --text-secondary:#8A9A7A;
-    --border-color:#1E2418;
-    --border-radius-card:14px;
-    --border-radius-btn:10px;
-    --font-heading:'Montserrat',sans-serif;
+    --bg-primary:#08050E;
+    --bg-card:#120D1C;
+    --bg-card-hover:#1B1429;
+    --accent-color:#9B5CFF;
+    --accent-2:#FF3D9A;
+    --gold:#FFC93C;
+    --lime:#7CFF6B;
+    --text-primary:#F6F2FF;
+    --text-secondary:#A096BC;
+    --border-color:#2A2040;
+    --font-heading:'Rubik',sans-serif;
     --font-body:'Inter',sans-serif;
-    --font-logo:'Unbounded',sans-serif;
-
+    --grad:linear-gradient(135deg,#9B5CFF 0%,#FF3D9A 100%);
     --bg:var(--bg-primary);
     --bg-elev:var(--bg-card);
     --text:var(--text-primary);
     --muted:var(--text-secondary);
-    --muted-dim:#5C6B52;
+    --muted-dim:#6F6590;
     --accent:var(--accent-color);
-    --accent-soft:var(--accent-neon);
-    --accent-dim:rgba(184,255,46,.12);
+    --accent-soft:#C9A6FF;
+    --accent-dim:rgba(155,92,255,.16);
     --line:var(--border-color);
     --bg-elev-2:var(--bg-card-hover);
-    --line-soft:rgba(148,163,184,.06);
-    --danger:#FF6B6B;
-    --ok:#6BCB77;
+    --line-soft:rgba(255,255,255,.06);
+    --danger:#FF5C7A;
+    --ok:#7CFF6B;
     --ease:cubic-bezier(.22,1,.36,1);
     --ease-sheet:cubic-bezier(.26,1.06,.34,1);
     --ease-spring:cubic-bezier(.34,1.56,.64,1);
@@ -51,15 +50,15 @@
   body::before{
     content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
     background:
-      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(184,255,46,.05), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(184,255,46,.03), transparent 50%);
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(155,92,255,.05), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(155,92,255,.03), transparent 50%);
   }
-  .orb{
+  .orb{display:none;
     position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;
     opacity:.35;animation:orbFloat 20s ease-in-out infinite;
   }
-  .orb-1{width:250px;height:250px;background:rgba(184,255,46,.07);top:-80px;right:-60px;animation-delay:0s;}
-  .orb-2{width:200px;height:200px;background:rgba(184,255,46,.05);bottom:20%;left:-40px;animation-delay:-8s;animation-duration:22s;}
+  .orb-1{width:250px;height:250px;background:rgba(155,92,255,.07);top:-80px;right:-60px;animation-delay:0s;}
+  .orb-2{width:200px;height:200px;background:rgba(155,92,255,.05);bottom:20%;left:-40px;animation-delay:-8s;animation-duration:22s;}
   @keyframes orbFloat{
     0%,100%{transform:translate(0,0) scale(1);}
     33%{transform:translate(25px,-25px) scale(1.08);}
@@ -77,13 +76,10 @@
   h1{font-family:var(--font-heading);font-size:22px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;margin:0;}
   .muted{color:var(--muted);font-size:12px;}
   .brand{display:flex;align-items:center;gap:10px;justify-content:center;}
-  .brand-mark{flex:0 0 auto;filter:drop-shadow(0 0 8px rgba(184,255,46,.4));animation:markPulse 3s ease-in-out infinite;}
-  @keyframes markPulse{0%,100%{filter:drop-shadow(0 0 8px rgba(184,255,46,.4));}50%{filter:drop-shadow(0 0 14px rgba(184,255,46,.6));}}
-  .brand-mark .mark-rot{transform-origin:15px 15px;animation:markRotate 12s linear infinite;}
-  @keyframes markRotate{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+  .logo-svg{display:block;width:82px;height:44px;filter:drop-shadow(0 0 12px rgba(155,92,255,.35));}
+  .login-box .logo-svg{width:150px;height:81px;}
   .brand-text{display:flex;flex-direction:column;line-height:1;text-align:left;}
-  .brand .logo{font-family:var(--font-logo);font-size:15px;font-weight:800;letter-spacing:.01em;text-transform:uppercase;color:var(--text);}
-  .brand .logo-sub{margin-top:3px;font-size:8px;font-weight:400;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);}
+    .brand .logo-sub{margin-top:3px;font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);}
   label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:16px 0 7px;font-weight:500;}
   input[type=text], input[type=number], input[type=password], textarea{
     width:100%;background:var(--bg);border:1.5px solid var(--line);color:var(--text);
@@ -103,14 +99,14 @@
   .swatch-opt.active{border-color:var(--accent);transform:scale(1.1);}
   .swatch-opt.active::after{border-color:var(--accent-dim);}
   .btn{
-    background:linear-gradient(135deg,var(--accent-soft),var(--accent));color:#0A0D09;border:none;padding:14px 20px;
+    background:var(--grad);color:#fff;border:none;padding:14px 20px;
     font-family:var(--font-body);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
-    border-radius:8px;font-weight:600;cursor:pointer;box-shadow:0 6px 20px rgba(184,255,46,.25);
+    border-radius:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 0 #4B22A8, 0 12px 24px rgba(155,92,255,.25);
     transition:all .2s var(--ease);position:relative;overflow:hidden;
   }
   .btn::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:transform .5s;}
   .btn:hover::before{transform:translateX(100%);}
-  .btn:active:not(:disabled){transform:scale(.96);}
+  .btn:active:not(:disabled){transform:translateY(3px);box-shadow:0 1px 0 #4B22A8;}
   .btn:disabled{opacity:.5;cursor:default;box-shadow:none;}
   .btn-outline{
     background:transparent;color:var(--text);border:1.5px solid var(--line);
@@ -126,7 +122,7 @@
     transition:all .2s var(--ease);
   }
   .btn-danger:active{transform:scale(.95);}
-  .btn-danger:hover{background:rgba(255,107,107,.1);}
+  .btn-danger:hover{background:rgba(255,92,122,.1);}
   .btn-icon-label{display:inline-flex;align-items:center;gap:6px;}
   .row{display:flex;gap:10px;}
   .row > *{flex:1;}
@@ -159,18 +155,18 @@
     background:none;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;
     transition:all .2s var(--ease);font-weight:500;
   }
-  .logout:hover{color:var(--danger);border-color:var(--danger);background:rgba(255,107,107,.08);}
+  .logout:hover{color:var(--danger);border-color:var(--danger);background:rgba(255,92,122,.08);}
 
   .stat-row{display:flex;gap:10px;margin-bottom:20px;}
   .stat-card{
     flex:1;border:1.5px solid var(--line);background:var(--bg-elev);border-radius:12px;
-    padding:14px 16px;transition:all .25s var(--ease);position:relative;overflow:hidden;
+    padding:14px 10px;transition:all .25s var(--ease);position:relative;overflow:hidden;
   }
   .stat-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--accent-dim),transparent);opacity:0;transition:opacity .3s;}
-  .stat-card:hover{border-color:rgba(184,255,46,.25);transform:translateY(-2px);}
+  .stat-card:hover{border-color:rgba(155,92,255,.25);transform:translateY(-2px);}
   .stat-card:hover::before{opacity:1;}
   .stat-num{font-family:var(--font-body);font-size:26px;font-weight:600;color:var(--text);line-height:1;position:relative;}
-  .stat-label{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:6px;position:relative;}
+  .stat-label{font-size:9px;letter-spacing:.04em;white-space:nowrap;text-transform:uppercase;color:var(--muted);margin-top:6px;position:relative;}
 
   .card{
     background:var(--bg-elev);border:1.5px solid var(--line);border-radius:12px;
@@ -179,7 +175,7 @@
     transition:all .25s var(--ease);position:relative;overflow:hidden;
   }
   .card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--accent-dim),transparent);opacity:0;transition:opacity .3s;}
-  .card:hover{border-color:rgba(184,255,46,.25);transform:translateY(-2px);}
+  .card:hover{border-color:rgba(155,92,255,.25);transform:translateY(-2px);}
   .card:hover::before{opacity:1;}
   @keyframes cardIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
   .thumb{
@@ -195,13 +191,13 @@
 
   .fab{
     position:fixed;right:20px;bottom:24px;width:58px;height:58px;border-radius:50%;
-    background:linear-gradient(135deg,var(--accent-soft),var(--accent));color:#0A0D09;font-size:28px;border:none;cursor:pointer;
-    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(184,255,46,.4);
+    background:var(--grad);color:#fff;font-size:28px;border:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(155,92,255,.4);
     transition:all .25s var(--ease);z-index:45;
   }
   .fab::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--accent);opacity:0;transition:opacity .3s;}
   .fab:active{transform:scale(.9);}
-  .fab:hover{box-shadow:0 12px 40px rgba(184,255,46,.55);transform:translateY(-2px) scale(1.05);}
+  .fab:hover{box-shadow:0 12px 40px rgba(155,92,255,.55);transform:translateY(-2px) scale(1.05);}
   .fab:hover::before{opacity:.2;}
 
   .overlay{
@@ -211,7 +207,7 @@
   }
   .overlay.open{opacity:1;pointer-events:auto;}
   .modal{
-    background:linear-gradient(180deg,rgba(15,18,13,.98),rgba(8,10,7,.99));border-top:1.5px solid var(--line);border-radius:20px 20px 0 0;
+    background:linear-gradient(180deg,#150F21,#0B0713);border-top:1.5px solid var(--line);border-radius:20px 20px 0 0;
     max-width:640px;width:100%;max-height:90vh;overflow-y:auto;padding:20px 22px 32px;
     transform:translateY(24px);transition:transform .38s var(--ease-sheet);
     box-shadow:0 -24px 70px rgba(0,0,0,.55);
@@ -238,11 +234,11 @@
   .photo-tile.cover::after{
     content:"обложка";position:absolute;left:0;right:0;bottom:0;
     font-size:9px;letter-spacing:.06em;text-transform:uppercase;text-align:center;
-    color:var(--accent);background:rgba(8,10,7,.8);padding:4px 0;font-weight:500;
+    color:var(--accent);background:rgba(8,5,14,.8);padding:4px 0;font-weight:500;
   }
   .photo-tile-remove{
     position:absolute;top:5px;right:5px;width:22px;height:22px;border-radius:50%;
-    background:rgba(8,10,7,.8);border:1px solid rgba(255,255,255,.15);color:#fff;
+    background:rgba(8,5,14,.8);border:1px solid rgba(255,255,255,.15);color:#fff;
     font-size:12px;line-height:1;display:flex;align-items:center;justify-content:center;
     cursor:pointer;transition:all .15s;
   }
@@ -250,12 +246,12 @@
   .photo-tile-remove:hover{background:var(--danger);border-color:var(--danger);}
   .photo-tile-move{
     position:absolute;top:5px;width:22px;height:22px;border-radius:50%;
-    background:rgba(8,10,7,.8);border:1px solid rgba(255,255,255,.15);color:#fff;
+    background:rgba(8,5,14,.8);border:1px solid rgba(255,255,255,.15);color:#fff;
     font-size:11px;line-height:1;display:flex;align-items:center;justify-content:center;
     cursor:pointer;transition:all .15s;
   }
   .photo-tile-move:active{transform:scale(.82);}
-  .photo-tile-move:hover{background:var(--accent);color:#0A0D09;border-color:var(--accent);}
+  .photo-tile-move:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
   .photo-tile-move.left{left:5px;}
   .photo-tile-move.right{left:30px;}
   .photo-tile-move.disabled{opacity:.25;pointer-events:none;}
@@ -278,7 +274,7 @@
     pointer-events:none;max-width:calc(100% - 40px);width:max-content;
   }
   .toast{
-    pointer-events:auto;background:var(--accent);color:#0A0D09;
+    pointer-events:auto;background:var(--accent);color:#fff;
     padding:11px 20px;border-radius:999px;font-size:12px;max-width:100%;font-weight:600;
     box-shadow:0 10px 30px rgba(0,0,0,.45);
     opacity:0;transform:translateY(16px) scale(.94);
@@ -293,16 +289,16 @@
   .tabs{display:flex;gap:4px;margin:0 0 18px;background:var(--bg-elev);border:1.5px solid var(--line);border-radius:999px;padding:4px;}
   .tab-btn{
     flex:1;background:transparent;border:none;color:var(--muted);
-    padding:10px;font-family:var(--font-body);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    padding:10px 4px;font-family:var(--font-body);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;
     border-radius:999px;cursor:pointer;position:relative;
     transition:all .2s var(--ease);font-weight:500;
   }
   .tab-btn:active{transform:scale(.95);}
-  .tab-btn.active{color:#0A0D09;background:linear-gradient(135deg,var(--accent-soft),var(--accent));box-shadow:0 4px 16px rgba(184,255,46,.3);font-weight:600;}
+  .tab-btn.active{color:#fff;background:var(--grad);box-shadow:0 4px 16px rgba(155,92,255,.3);font-weight:600;}
   .tab-badge{
-    display:inline-block;background:var(--accent);color:#0A0D09;font-size:10px;
+    display:inline-block;background:var(--gold);color:#1A1204;font-size:10px;
     border-radius:999px;min-width:16px;height:16px;line-height:16px;text-align:center;
-    margin-left:6px;padding:0 4px;font-weight:700;
+    margin-left:4px;padding:0 4px;font-weight:800;
   }
 
   .order-card{
@@ -311,7 +307,7 @@
     transition:all .25s var(--ease);position:relative;overflow:hidden;
   }
   .order-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--accent-dim),transparent);opacity:0;transition:opacity .3s;}
-  .order-card:hover{border-color:rgba(184,255,46,.25);transform:translateY(-2px);}
+  .order-card:hover{border-color:rgba(155,92,255,.25);transform:translateY(-2px);}
   .order-card:hover::before{opacity:1;}
   .order-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;position:relative;z-index:1;}
   .order-id{font-family:var(--font-heading);font-size:15px;font-weight:700;text-transform:uppercase;}
@@ -320,10 +316,10 @@
     font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:6px 11px;
     border-radius:999px;border:1.5px solid;white-space:nowrap;font-weight:600;
   }
-  .status-new{color:var(--accent);border-color:var(--accent);background:var(--accent-dim);}
-  .status-contacted{color:#8FC0E8;border-color:#8FC0E8;background:rgba(127,178,224,.12);}
-  .status-done{color:var(--ok);border-color:var(--ok);background:rgba(107,203,119,.1);}
-  .status-cancelled{color:var(--danger);border-color:var(--danger);background:rgba(255,107,107,.1);}
+  .status-new{color:var(--gold);border-color:var(--gold);background:rgba(255,201,60,.1);}
+  .status-contacted{color:#7FC4FF;border-color:#7FC4FF;background:rgba(127,196,255,.12);}
+  .status-done{color:var(--ok);border-color:var(--ok);background:rgba(124,255,107,.1);}
+  .status-cancelled{color:var(--danger);border-color:var(--danger);background:rgba(255,92,122,.1);}
   .order-items{font-size:12px;color:var(--muted);margin:12px 0;line-height:1.7;position:relative;z-index:1;}
   .order-contact{font-size:13px;margin-top:8px;line-height:1.7;position:relative;z-index:1;}
   .order-contact a{color:var(--accent);text-decoration:none;font-weight:500;}
@@ -342,29 +338,15 @@
 
   .reveal{opacity:0;transform:translateY(16px);transition:all .5s var(--ease);}
   .reveal.visible{opacity:1;transform:translateY(0);}
-</style></style>
+</style>
 </head>
 <body>
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs> <linearGradient id="bro-gold" x1="0" y1="0" x2="0" y2="1"> <stop offset="0" stop-color="#FFE27A"/> <stop offset="1" stop-color="#FFB400"/> </linearGradient> <path id="bro-word" d=" M30 40 V100 M30 40 H54 C70 40 76 46 76 56 C76 66 70 70 54 70 H30 M30 70 H58 C76 70 82 77 82 86 C82 96 76 100 58 100 H30 M106 100 V40 H130 C146 40 152 46 152 56 C152 66 146 70 130 70 H106 M128 70 L156 100 M200 40 C220 40 228 50 228 70 C228 90 220 100 200 100 C180 100 172 90 172 70 C172 50 180 40 200 40 Z"/> </defs><symbol id="bro-logo" viewBox="-6 -8 276 154" fill="none"> <g transform="translate(14 0) skewX(-8)" stroke-linecap="round" stroke-linejoin="round"> <use href="#bro-word" transform="translate(4 4)" stroke="#FF3D9A" stroke-width="22"/> <use href="#bro-word" stroke="#08050E" stroke-width="18"/> <use href="#bro-word" stroke="#FFFFFF" stroke-width="11"/> <!-- drips --> <g stroke="#FFFFFF" stroke-width="6"> <path d="M30 100 V120"/><path d="M112 100 V130"/><path d="M200 100 V116"/> </g> <g fill="#FFFFFF" stroke="none"> <circle cx="30" cy="122" r="4"/><circle cx="112" cy="132" r="4.5"/><circle cx="200" cy="118" r="3.5"/> <circle cx="244" cy="44" r="2.5"/><circle cx="252" cy="58" r="1.6"/><circle cx="12" cy="52" r="2.2"/><circle cx="6" cy="70" r="1.4"/> </g> <!-- crown --> <g stroke="#08050E" stroke-width="9" stroke-linejoin="round" fill="#08050E"> <path d="M96 28 L100 8 L114 19 L128 3 L142 19 L156 8 L160 28 Z"/> </g> <path d="M96 28 L100 8 L114 19 L128 3 L142 19 L156 8 L160 28 Z" fill="url(#bro-gold)" stroke="#FFE27A" stroke-width="2.5" stroke-linejoin="round"/> <circle cx="100" cy="7" r="3" fill="#FFE27A"/><circle cx="128" cy="2.5" r="3.2" fill="#FFE27A"/><circle cx="156" cy="7" r="3" fill="#FFE27A"/> </g> </symbol></svg>
 
 <div id="loginView" class="login-box">
-  <div class="brand">
-    <svg class="brand-mark" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="brandGradLogin" x1="0" y1="0" x2="30" y2="30" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#7CE000"/><stop offset=".5" stop-color="#D4FF6A"/><stop offset="1" stop-color="#7CE000"/>
-        </linearGradient>
-      </defs>
-      <g class="mark-rot">
-        <path d="M4 12l5 3.5L15 6l6 9.5 5-3.5-2 12H6L4 12Z" stroke="url(#brandGradLogin)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
-        <path d="M8.5 22.5h13" stroke="url(#brandGradLogin)" stroke-width="1.6" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <div class="brand-text">
-      <div class="logo">Street Life</div>
-      <div class="logo-sub">Панель администратора</div>
-    </div>
+  <div class="brand" style="flex-direction:column;gap:6px;">
+    <svg class="logo-svg" role="img" aria-label="BRO"><use href="#bro-logo"/></svg>
+    <div class="logo-sub">Панель администратора</div>
   </div>
   <div class="login-card">
     <label>Пароль</label>
@@ -377,17 +359,7 @@
 <div id="app" style="display:none;">
   <div class="topbar">
     <div class="brand">
-      <svg class="brand-mark" width="24" height="24" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="brandGradTop" x1="0" y1="0" x2="30" y2="30" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#7CE000"/><stop offset=".5" stop-color="#D4FF6A"/><stop offset="1" stop-color="#7CE000"/>
-          </linearGradient>
-        </defs>
-        <g class="mark-rot">
-          <path d="M4 12l5 3.5L15 6l6 9.5 5-3.5-2 12H6L4 12Z" stroke="url(#brandGradTop)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M8.5 22.5h13" stroke="url(#brandGradTop)" stroke-width="1.6" stroke-linecap="round"/>
-        </g>
-      </svg>
+      <svg class="logo-svg" role="img" aria-label="BRO"><use href="#bro-logo"/></svg>
       <div class="brand-text">
         <h1 id="viewTitle">Товары</h1>
       </div>
@@ -426,21 +398,21 @@
     <div class="swatches" id="swatchPicker"></div>
 
     <label>Название</label>
-    <input type="text" id="fName" placeholder="Худи STREET LIFE">
+    <input type="text" id="fName" placeholder="PAFOS 20000">
 
     <div class="row">
       <div>
         <label>Категория</label>
-        <input type="text" id="fCategory" placeholder="Кроссовки">
+        <input type="text" id="fCategory" placeholder="Одноразки">
       </div>
       <div>
         <label>Цена, ₽</label>
-        <input type="number" id="fPrice" placeholder="6990">
+        <input type="number" id="fPrice" placeholder="1750">
       </div>
     </div>
 
     <label>Старая цена, ₽ <span class="muted" style="text-transform:none;letter-spacing:0;">— необязательно, покажется зачёркнутой рядом с новой ценой</span></label>
-    <input type="number" id="fOldPrice" placeholder="8990">
+    <input type="number" id="fOldPrice" placeholder="2100">
 
     <label>Бейдж на карточке</label>
     <div class="badge-picker" id="badgePicker">
@@ -451,11 +423,11 @@
       <button type="button" class="badge-opt" data-badge="instock">В наличии</button>
     </div>
 
-    <label>Размеры (через запятую)</label>
-    <input type="text" id="fSizes" placeholder="S, M, L, XL">
+    <label>Вкусы / цвета <span class="muted" style="text-transform:none;letter-spacing:0;">— через запятую</span></label>
+    <input type="text" id="fSizes" placeholder="Виноград, Манго, Ледяная мята">
 
     <label>Описание</label>
-    <textarea id="fDesc" placeholder="Короткое описание товара"></textarea>
+    <textarea id="fDesc" placeholder="Ресурс, особенности, комплектация"></textarea>
 
     <div class="error" id="formError"></div>
 
@@ -513,12 +485,12 @@
 
 <script>
 const SWATCHES = [
-  'linear-gradient(155deg,#F3EEE2,#E4D9C3 130%)',
-  'linear-gradient(155deg,#F6F1E7,#E8DCC6 130%)',
-  'linear-gradient(155deg,#F0EAE0,#DCCFB2 130%)',
-  'linear-gradient(155deg,#F5F0E5,#E2D4B8 130%)',
-  'linear-gradient(155deg,#F2ECE0,#D9CBAE 130%)',
-  'linear-gradient(155deg,#F4EFE4,#E6DAC0 130%)'
+  'radial-gradient(circle at 75% 15%,rgba(255,255,255,.16),transparent 45%),linear-gradient(155deg,#4A1D9A,#14082B 92%)',
+  'radial-gradient(circle at 75% 15%,rgba(255,255,255,.16),transparent 45%),linear-gradient(155deg,#8F1760,#220919 92%)',
+  'radial-gradient(circle at 75% 15%,rgba(255,255,255,.16),transparent 45%),linear-gradient(155deg,#10606F,#07181E 92%)',
+  'radial-gradient(circle at 75% 15%,rgba(255,255,255,.16),transparent 45%),linear-gradient(155deg,#7A3A0E,#1C0D05 92%)',
+  'radial-gradient(circle at 75% 15%,rgba(255,255,255,.16),transparent 45%),linear-gradient(155deg,#1F6E34,#08190D 92%)',
+  'radial-gradient(circle at 75% 15%,rgba(255,255,255,.16),transparent 45%),linear-gradient(155deg,#2338A0,#0A1033 92%)'
 ];
 const fmt = n => Number(n||0).toLocaleString('ru-RU') + ' ₽';
 const BADGE_LABELS = { hit:'Хит', trend:'В тренде', sale:'Скидка', instock:'В наличии' };
@@ -529,7 +501,7 @@ function priceLineHTML(p){
   return fmt(p.price);
 }
 
-let pwd = localStorage.getItem('street_life_admin_pwd') || '';
+let pwd = localStorage.getItem('bro_admin_pwd') || '';
 let products = [];
 let orders = [];
 let questions = [];
@@ -584,7 +556,7 @@ async function tryLogin(){
   document.getElementById('loginError').textContent = '';
   try {
     await api('/api/admin/login', { method:'POST' });
-    localStorage.setItem('street_life_admin_pwd', pwd);
+    localStorage.setItem('bro_admin_pwd', pwd);
     enterApp();
   } catch(e){
     document.getElementById('loginError').textContent = 'Неверный пароль';
@@ -594,7 +566,7 @@ document.getElementById('loginBtn').onclick = tryLogin;
 document.getElementById('pwInput').addEventListener('keydown', e=>{ if(e.key==='Enter') tryLogin(); });
 
 document.getElementById('logoutBtn').onclick = () => {
-  localStorage.removeItem('street_life_admin_pwd');
+  localStorage.removeItem('bro_admin_pwd');
   pwd = '';
   document.getElementById('app').style.display = 'none';
   document.getElementById('addBtn').style.display = 'none';
@@ -669,7 +641,7 @@ function renderList(){
       <div class="card-body">
         <div class="card-title">${p.name || '(без названия)'}</div>
         <div class="card-sub">${p.category || '—'} · ${priceLineHTML(p)}${badgeTag}</div>
-        <div class="card-sub">Размеры: ${(p.sizes||[]).join(', ')}</div>
+        <div class="card-sub">Вкусы / цвета: ${(p.sizes||[]).join(', ')}</div>
         <div class="card-sub">${photoCount ? `Фото: ${photoCount}` : 'Без фото'}</div>
         <div class="card-actions">
           <button class="btn-outline btn-icon-label" data-edit="${p.id}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>Изменить</button>
@@ -724,7 +696,7 @@ function renderOrders(){
     <div class="order-card">
       <div class="order-head">
         <div>
-          <div class="order-id">SL-${o.id}</div>
+          <div class="order-id">BRO-${o.id}</div>
           <div class="order-date">${new Date(o.created_at).toLocaleString('ru-RU')}</div>
         </div>
         <span class="status-badge status-${o.status}">${statusLabel(o.status)}</span>
@@ -1182,7 +1154,7 @@ document.getElementById('saveBtn').onclick = async () => {
 if (pwd){
   api('/api/admin/login', { method:'POST' })
     .then(enterApp)
-    .catch(() => { pwd=''; localStorage.removeItem('street_life_admin_pwd'); });
+    .catch(() => { pwd=''; localStorage.removeItem('bro_admin_pwd'); });
 }
 
 
